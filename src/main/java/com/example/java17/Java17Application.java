@@ -22,11 +22,11 @@ public class Java17Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("My application started");
 
-        //localVariable();
-        //numberFormat();
-        //textBlocks();
-        //record();
-        //pseudoRandom();
+        localVariable();
+        numberFormat();
+        textBlocks();
+        record();
+        pseudoRandom();
 
         log.info("My application finished");
     }
@@ -46,7 +46,7 @@ public class Java17Application implements CommandLineRunner {
     }
 
     private void numberFormat() {
-        NumberFormat numberFormat = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.LONG);
+        NumberFormat numberFormat = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
         log.info("formatted number = {}", numberFormat.format(1000));
 
         numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
@@ -58,7 +58,7 @@ public class Java17Application implements CommandLineRunner {
      */
     private void textBlocks() {
         String textBlock = """
-                With Spring Boot in your app, just a few lines of code is all you need to start building services like a boss.
+                With \n'"Spring Boot in your app, just a few lines of code is all you need to start building services like a boss.
                             
                             New to Spring? Try our simple quickstart guide.""";
         log.info(textBlock);
